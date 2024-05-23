@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import dataGenerator from "./data/dataGenerator";
+import Table from "./components/Table";
 
-function App() {
+const App = () => {
+  const { columns, userData } = dataGenerator();
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className='nav'>
+        <h1>Customers</h1>
+      </div>
+      <Table columns={columns} userData={userData} />
     </div>
   );
-}
+};
 
 export default App;

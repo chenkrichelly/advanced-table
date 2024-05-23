@@ -1,13 +1,200 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+.App {
+    font-family: 'Poppins', sans-serif;
+}
+body{
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: rgba(236, 227, 206, 0.2);
+}
+.nav{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 90px;
+  background-color: #4F6F52;
+  color: rgb(236, 227, 206);;
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 7px 10px -3px;
+}
+.nav h1{
+  font-weight: 700;
+  text-align: center;
+}
+.content{
+  width: 90%;
+  margin: auto;
+  padding-top: 100px;
+  position: relative;
+}
+table {
+  width: 100%;
+  margin: 15px auto;
+  border-radius: 20px;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 10px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+thead{
+  background-color: #3A4D39;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 7px 10px -3px;
+}
+th{
+  padding: 20px 15px;
+  cursor: pointer;
+  color: black;
+}
+th:hover {
+  background-color: #3e533c;
+}
+td{
+  padding: 20px 10px;
+  border-bottom:1px solid #ccc ;
+  color:rgb(77, 77, 77);
+  width: auto;
+  overflow: hidden;
+}
+input.table-edit {
+  width: 80%;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  padding: 8px 10px;
+}
+.checkmarkicon{
+  background-color: transparent;
+  color: #3A4D39;
+  border: none;
+  font-size: 20px;
+}
+.cell{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+}
+.filter-div{
+  margin: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+}
+input[type="text"]
+{
+  border-radius: 20px;
+  padding: 10px 15px;
+  border: 1px solid #739072;
+  font-family: 'Poppins', sans-serif;
+  background-color: transparent;
+}
+.select-list {
+  width: 80%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  background-color: transparent;
+  appearance: none;
+}
+.toggle-menu-btn {
+  border-radius: 20px;
+  padding: 10px 15px;
+  border: 1px solid #739072;
+  color: rgb(236, 227, 206);
+  background-color:rgba(58, 77, 57, 0.8);
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 10px;
+}
+.column-menu {
+  width: 130px;
+  padding: 5px;
+  border-radius: 15px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 10px;
+  position: absolute;
+  right: 0;
+  margin-right: 20px;
+  font-size: 15px;
+}
+.column-label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+.custom-checkbox {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: none;
+  background-color: transparent;
+  margin-right: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  line-height: 1;
+}
+.custom-checkbox::before {
+  content: '-';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: rgba(0, 0, 0, 0.2);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.custom-checkbox:checked::before {
+  content: '+';
+  background-color: transparent;
+  color: black;
+}
+.column-label-text {
+  transition: opacity 0.2s ease;
+}
+.custom-checkbox:not(:checked)+.column-label-text {
+  opacity: 0.5;
+}
+.custom-checkbox:checked+.column-label-text {
+  opacity: 1;
+}
+input[type=checkbox] {
+  accent-color: #739072;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+  list-style: none;
+  padding: 0;
+}
+.pagination-item {
+  margin: 0 5px;
+}
+.pagination-link {
+  display: block;
+  padding: 8px 15px;
+  text-decoration: none;
+  color: #4F6F52;
+  border: 1px solid #ddd;
+  border-radius: 50px;
+  transition: background-color 0.3s, color 0.3s;
+}
+.pagination-link:hover {
+  background-color: #4F6F52;
+  color: white;
+}
+.pagination-link.active {
+  background-color: #4F6F52;
+  color: white;
+  border-color: #4F6F52;
+  cursor: default;
 }
